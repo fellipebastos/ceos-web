@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  nodeservice:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: node:12.14.1
+    container_name: nodeserviceweb
+    volumes:
+      - ./:/usr/src/app
+      - '/usr/src/app/node_modules'
+    ports:
+      - "3000:3000"
+    tty: true
