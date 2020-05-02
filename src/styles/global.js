@@ -10,15 +10,17 @@ export default createGlobalStyle`
 
   body {
     -webkit-font-smoothing: antialiased;
+    color: ${(p) => p.theme.color.grayDark};
+    font-size: ${(p) => p.theme.font.size.normal};
   }
 
   body, input, button {
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 1rem;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-weight: 500;
+    font-weight: ${(p) => p.theme.font.weight.bold};
   }
 
   button {

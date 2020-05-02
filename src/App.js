@@ -12,9 +12,8 @@ function App() {
     <BrowserRouter>
       <AppProvider>
         <Routes />
+        <GlobalStyle />
       </AppProvider>
-
-      <GlobalStyle />
     </BrowserRouter>
   );
 }
