@@ -30,4 +30,14 @@ const font = {
   },
 };
 
-export default { color, font };
+const shadow = {
+  normal: '0px 3px 6px #00000029',
+};
+
+const border = {
+  radius: {
+    normal: '10px',
+  },
+};
+
+export default { border, color, font, shadow };
