@@ -11,7 +11,7 @@ export const Container = styled(PageContainer).attrs({ as: 'header' })`
   justify-content: space-between;
   align-items: center;
 
-  padding-bottom: 1.2rem !important;
+  padding-bottom: 0rem !important;
   box-shadow: ${({ theme }) => theme.shadow.normal};
 `;
 

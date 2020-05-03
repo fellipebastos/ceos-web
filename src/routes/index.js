@@ -5,6 +5,7 @@ import Route from './Route';
 import Auth from '../pages/Auth';
 import Dashboard from '../pages/Dashboard';
 import Messages from '../pages/Messages';
+import Stocks from '../pages/Stock';
 
 export default function Routes() {
   return (
@@ -14,7 +15,7 @@ export default function Routes() {
 
       <Route path="/dashboard" component={Dashboard} />
       <Route path="/messages" component={Messages} />
-      <Route path="/stock" component={Dashboard} />
+      <Route path="/stock" component={Stocks} />
     </Switch>
   );
 }
