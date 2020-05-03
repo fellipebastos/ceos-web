@@ -44,7 +44,9 @@ export default function Messages() {
               type="textarea"
               name="answer"
               rows={6}
+              value="Sim! A sapatilha é ortopédica."
               placeholder="Digite a resposta"
+              disabled
             />
 
             <MessageSent>Resposta enviada com sucesso!</MessageSent>
@@ -133,7 +135,7 @@ export default function Messages() {
         </Body>
       </Card>
 
-      <p>3 de 15 perguntas</p>
+      {/* <p>3 de 15 perguntas</p> */}
     </Container>
   );
 }

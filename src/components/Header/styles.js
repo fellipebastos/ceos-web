@@ -84,6 +84,7 @@ export const Profile = styled.div`
 export const Menu = styled.nav`
   flex-basis: 100%;
   display: flex;
+  overflow-x: auto;
 `;
 
 export const MenuLink = styled.div`

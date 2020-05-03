@@ -168,7 +168,7 @@ export default function Stock() {
           </Body>
         </Card>
       </div>
-      <p>3 de 50 produtos</p>
+      {/* <p>3 de 50 produtos</p> */}
     </Container>
   );
 }

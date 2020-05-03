@@ -11,22 +11,21 @@ export const Container = styled(PageContainer)`
   ${Card} {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
-    /* flex-wrap: wrap;
-    flex-grow: 1;
-    align-content: flex-start; */
+    flex-basis: 100%;
     padding: 1rem;
-
-    & + div {
-      margin-top: 40px;
-    }
+    margin-bottom: 2rem;
 
     @media ${breakpoints.xl} {
-      flex: 1;
+      flex-basis: 32%;
 
       & + div {
-        margin-left: 2rem;
-        margin-top: 0;
+        &:not(:nth-child(4n)) {
+          margin-left: 2%;
+        }
+
+        &:nth-child(4n) {
+          margin-left: 0;
+        }
       }
     }
   }
