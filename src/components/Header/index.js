@@ -85,7 +85,7 @@ export default function Header() {
           </Link>
         </MenuLink>
 
-        <MenuLink active={pathname === '/messages'}>
+        <MenuLink active={pathname === '/messages'} badge={3}>
           <Link to="/messages">
             <MdMessage size={25} />
             Mensagens

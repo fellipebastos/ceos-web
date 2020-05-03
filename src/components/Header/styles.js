@@ -94,6 +94,8 @@ export const MenuLink = styled.div`
   }
 
   a {
+    position: relative;
+
     display: flex;
     align-items: center;
     padding-bottom: 1.2rem;
@@ -111,6 +113,38 @@ export const MenuLink = styled.div`
       css`
         color: ${({ theme }) => theme.color.grayDark};
         border-color: ${({ theme }) => theme.color.blue};
+      `}
+
+    ${({ badge }) =>
+      badge &&
+      css`
+        &::after {
+          content: '${badge}';
+          position: absolute;
+          top: -8px;
+          left: 14px;
+
+          min-width: 0.6rem;
+          min-height: 0.4rem;
+
+          display: flex;
+          justify-content: center;
+          padding: 0.2rem 0.3rem;
+
+          font-size: 10px;
+          color: white;
+          background: red;
+          border-radius: 50%;
+          filter: grayscale(0.4);
+        }
+      `}
+
+    ${({ active }) =>
+      active &&
+      css`
+        &::after {
+          filter: grayscale(0);
+        }
       `}
 
     &:hover {
