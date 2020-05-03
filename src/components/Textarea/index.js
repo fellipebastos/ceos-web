@@ -18,7 +18,7 @@ export default function Input({ name, label, ...rest }) {
 
   return (
     <>
-      <Label htmlFor={fieldName}>{label}</Label>
+      {label && <Label htmlFor={fieldName}>{label}</Label>}
 
       <Textarea
         id={fieldName}

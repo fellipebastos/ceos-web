@@ -53,16 +53,16 @@ export default function Messages() {
       </Card>
       <Card>
         <Header>
-          <img src={user1} alt="Marina Ferraz" />
+          <img src={user2} alt="Renan Silveira" />
           <div>
-            <h1>Marina Ferraz</h1>
+            <h1>Renan Silveira</h1>
             <div>
               <img src={productInfoImg} alt="Informação do Produto" />
-              Sapatilha Amarela | Cód: 254445
+              Camisa de Time | Cód: 335964
             </div>
             <div>
               <img src={orderInfoImg} alt="Informação do Pedido" />
-              Pedido | TGH-2653
+              Pedido | ASD-5533
             </div>
           </div>
         </Header>
@@ -70,7 +70,10 @@ export default function Messages() {
         <Body>
           <div>
             <h1>Pergunta</h1>
-            <p>A sapatilha é ortopédica?</p>
+            <p>
+              A camisa vem com a parte de trás escrita ? Se vier, qual o nome e
+              número do jogador?
+            </p>
           </div>
 
           <Form>
@@ -81,25 +84,27 @@ export default function Messages() {
               placeholder="Digite a resposta"
             />
 
-            <Time>
-              <AiFillClockCircle /> 12min
-            </Time>
-            <Button type="submit">Responder</Button>
+            <div>
+              <Time>
+                <AiFillClockCircle /> 30min
+              </Time>
+              <Button type="submit">Responder</Button>
+            </div>
           </Form>
         </Body>
       </Card>
       <Card>
         <Header>
-          <img src={user1} alt="Marina Ferraz" />
+          <img src={user3} alt="Eduarda Carvalho" />
           <div>
-            <h1>Marina Ferraz</h1>
+            <h1>Eduarda Carvalho</h1>
             <div>
               <img src={productInfoImg} alt="Informação do Produto" />
-              Sapatilha Amarela | Cód: 254445
+              Camisa Elegante | Cód: 222563
             </div>
             <div>
               <img src={orderInfoImg} alt="Informação do Pedido" />
-              Pedido | TGH-2653
+              Pedido | TYY-8894
             </div>
           </div>
         </Header>
@@ -107,7 +112,7 @@ export default function Messages() {
         <Body>
           <div>
             <h1>Pergunta</h1>
-            <p>A sapatilha é ortopédica?</p>
+            <p>A camisa faz a pessoa transpirar muito?</p>
           </div>
 
           <Form>
@@ -118,10 +123,12 @@ export default function Messages() {
               placeholder="Digite a resposta"
             />
 
-            <Time>
-              <AiFillClockCircle /> 12min
-            </Time>
-            <Button type="submit">Responder</Button>
+            <div>
+              <Time>
+                <AiFillClockCircle /> 1h
+              </Time>
+              <Button type="submit">Responder</Button>
+            </div>
           </Form>
         </Body>
       </Card>

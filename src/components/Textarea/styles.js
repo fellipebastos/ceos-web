@@ -8,7 +8,7 @@ export const Textarea = styled.textarea`
   padding: 0.8125rem 1.5rem;
 
   border: 1px solid ${({ theme }) => theme.color.grayVeryLight};
-  border-radius: 10px;
+  border-radius: ${({ theme }) => theme.border.radius.normal};
 
   &,
   &::placeholder {

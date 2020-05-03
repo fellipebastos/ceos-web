@@ -11,8 +11,10 @@ export const Container = styled(PageContainer)`
   ${Card} {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    flex-basis: 100%;
+    flex-grow: 1;
+    /* flex-wrap: wrap;
+    flex-grow: 1;
+    align-content: flex-start; */
     padding: 1rem;
 
     & + div {
@@ -67,9 +69,12 @@ export const Header = styled.div`
 
 export const Body = styled.div`
   margin-top: 1rem;
+
   display: flex;
-  flex-direction: column;
-  flex: 1;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  flex-basis: 100%;
+  align-content: space-between;
 
   & > div {
     h1 {
@@ -84,16 +89,12 @@ export const Body = styled.div`
   }
 
   form {
-    flex: 1;
     margin-top: 2rem;
     width: 100%;
     position: relative;
 
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    align-self: flex-end;
-    justify-content: space-between;
+    flex-direction: column;
 
     &::after {
       content: 'Responder';
@@ -106,24 +107,26 @@ export const Body = styled.div`
     }
 
     textarea {
-      align-self: flex-start;
-      flex-basis: 100%;
       padding: 2.5rem 1rem 1rem 1rem;
-      margin-bottom: 1rem;
       resize: none;
+      margin-bottom: 1rem;
 
       font-size: ${({ theme }) => theme.font.size.medium};
     }
 
-    button {
-      align-self: center;
+    & > div {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
 
-      color: ${({ theme }) => theme.color.white};
-      background: ${({ theme }) => theme.color.green};
-      border-radius: ${({ theme }) => theme.border.radius.large};
+      button {
+        color: ${({ theme }) => theme.color.white};
+        background: ${({ theme }) => theme.color.green};
+        border-radius: ${({ theme }) => theme.border.radius.large};
 
-      font-weight: ${({ theme }) => theme.font.weight.medium};
-      font-size: ${({ theme }) => theme.font.size.medium};
+        font-weight: ${({ theme }) => theme.font.weight.medium};
+        font-size: ${({ theme }) => theme.font.size.medium};
+      }
     }
   }
 `;
