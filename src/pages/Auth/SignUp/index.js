@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form } from '@unform/web';
 
-import olistImg from '../../../assets/logo-olist.png';
+import mlImg from '../../../assets/logo-mercadolivre.png';
 
 import Card from '../../../components/Card';
 import Button from '../../../components/Button';
@@ -9,18 +9,13 @@ import Input from '../../../components/Input';
 
 import { Container, Info } from './styles';
 
-const handleSubmit = (data) => {
-  console.log(data);
-};
-
 export default function SignUp() {
   return (
     <Container>
       <Card>
-        <Form onSubmit={handleSubmit}>
+        <Form>
           <Info>
-            Conexão <img src={olistImg} alt="Conexão Olist" /> efetuada com
-            sucesso
+            Conexão <img src={mlImg} alt="Conexão Olist" /> efetuada com sucesso
           </Info>
 
           <h1>Cadastro de Dados</h1>
@@ -58,7 +53,7 @@ export default function SignUp() {
             na otimização das respostas dos seus clientes.
           </p>
 
-          <Button type="submit">Enviar</Button>
+          <Button type="button">Enviar</Button>
         </Form>
       </Card>
     </Container>

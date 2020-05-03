@@ -47,6 +47,6 @@ export const Info = styled.div`
   img {
     max-width: 60px;
     vertical-align: middle;
-    margin-top: -4px;
+    margin: 0 1px;
   }
 `;

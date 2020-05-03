@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { Form } from '@unform/web';
 import { AiFillClockCircle } from 'react-icons/ai';
 import { parseISO, formatRelative } from 'date-fns';
@@ -32,25 +32,28 @@ export default function Messages() {
     fetchMessages();
   }, []);
 
-  const handleAnswer = async (data, id) => {
-    if (!data.awnser.length) return;
+  const handleAnswer = useCallback(
+    async (data, id) => {
+      if (!data.awnser.length) return;
 
-    const oldMessageIndex = messages.findIndex((m) => m.id === id);
+      const oldMessageIndex = messages.findIndex((m) => m.id === id);
 
-    if (oldMessageIndex > 0) {
-      await api.post(`message/awnser/${id}`, data);
+      if (oldMessageIndex > -1) {
+        await api.post(`message/awnser/${id}`, data);
 
-      const freshMessages = messages.map((m) => {
-        if (m.id === id) {
-          m.message = data.awnser;
-        }
+        const freshMessages = messages.map((m) => {
+          if (m.id === id) {
+            m.message = data.awnser;
+          }
 
-        return m;
-      });
+          return m;
+        });
 
-      setMessages(freshMessages);
-    }
-  };
+        setMessages(freshMessages);
+      }
+    },
+    [messages],
+  );
 
   return (
     <Container>
