@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Form } from '@unform/web';
 import { MdArrowDropDown } from 'react-icons/md';
 
 import api from '../../services/api';
 
 import Card from '../../components/Card';
-import Textarea from '../../components/Textarea';
 import Button from '../../components/Button';
 
-import { Container, Header, Body, MessageSent } from './styles';
+import { Container, Header, Body } from './styles';
 import Loading from '../../components/Loading';
 
 export default function Stock() {
@@ -35,7 +33,7 @@ export default function Stock() {
           </Button>
 
           <div>
-            {products.map((product, index) => (
+            {products.map((product) => (
               <Card key={product.id}>
                 <Header>
                   <img src={product.image} alt="Blazer amarelo" />
@@ -57,43 +55,7 @@ export default function Stock() {
                 </Header>
 
                 <Body>
-                  <strong>
-                    Crie especificidades em seu produto adicionando possíveis
-                    perguntas e respostas.
-                  </strong>
-
-                  <Form>
-                    <div label="Pergunta">
-                      <Textarea
-                        type="textarea"
-                        name="question"
-                        rows={2}
-                        defaultValue={
-                          index === 0 ? 'Qual a largura do produto?' : ''
-                        }
-                        disabled={index === 0}
-                        placeholder="Digite a pergunta"
-                      />
-                    </div>
-                    <div label="Resposta">
-                      <Textarea
-                        type="textarea"
-                        name="message"
-                        rows={2}
-                        defaultValue={
-                          index === 0 ? 'O produto tem a largura de 50cm.' : ''
-                        }
-                        disabled={index === 0}
-                        placeholder="Digite a resposta"
-                      />
-                    </div>
-
-                    {index === 0 ? (
-                      <MessageSent>Resposta enviada com sucesso!</MessageSent>
-                    ) : (
-                      <Button type="submit">Enviar</Button>
-                    )}
-                  </Form>
+                  <Button type="button">Mais Detalhes</Button>
                 </Body>
               </Card>
             ))}

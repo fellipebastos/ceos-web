@@ -31,25 +31,26 @@ export const Container = styled(PageContainer)`
       margin-bottom: 2rem;
 
       @media ${breakpoints.xl} {
-      flex-basis: 32%;
+        flex-basis: 32%;
 
-      & + div {
-        &:not(:nth-child(3n + 4)) {
-          margin-left: 2%;
-        }
+        & + div {
+          &:not(:nth-child(3n + 4)) {
+            margin-left: 2%;
+          }
 
-        &:nth-child(3n + 4) {
-          margin-left: 0;
+          &:nth-child(3n + 4) {
+            margin-left: 0;
+          }
         }
       }
     }
-  }
 
-  & > p {
-    flex-basis: 100%;
-    margin-top: 2rem;
-    font-size: ${({ theme }) => theme.font.size.large};
-    text-align: right;
+    & > p {
+      flex-basis: 100%;
+      margin-top: 2rem;
+      font-size: ${({ theme }) => theme.font.size.large};
+      text-align: right;
+    }
   }
 `;
 
@@ -81,81 +82,14 @@ export const Body = styled.div`
   margin-top: 1rem;
 
   display: flex;
-  flex-wrap: wrap;
-  flex-grow: 1;
-  flex-basis: 100%;
-  flex-direction: column;
-  align-content: flex-start;
+  justify-content: flex-end;
 
-  & > div {
-    h1 {
-      font-size: ${({ theme }) => theme.font.size.medium};
-      font-weight: ${({ theme }) => theme.font.weight.bold};
-    }
+  button {
+    color: ${({ theme }) => theme.color.white};
+    background: ${({ theme }) => theme.color.green};
+    border-radius: ${({ theme }) => theme.border.radius.large};
 
-    p {
-      font-size: ${({ theme }) => theme.font.size.medium};
-      margin-top: 5px;
-    }
+    font-weight: ${({ theme }) => theme.font.weight.medium};
+    font-size: ${({ theme }) => theme.font.size.medium};
   }
-
-  form {
-    margin-top: 1rem;
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-
-    & > div[label] {
-      position: relative;
-
-      &::after {
-        content: attr(label);
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-
-        margin: 1px 1rem;
-        padding: 0.5rem 0;
-        background: white;
-        font-weight: ${({ theme }) => theme.font.weight.bold};
-      }
-
-      &:last-of-type {
-        margin-bottom: 1rem;
-      }
-
-      textarea {
-        padding: 2.5rem 1rem 1rem 1rem;
-        resize: none;
-        width: 100%;
-
-        font-size: ${({ theme }) => theme.font.size.medium};
-      }
-    }
-
-    button {
-      align-self: flex-end;
-      margin-top: auto;
-
-      color: ${({ theme }) => theme.color.white};
-      background: ${({ theme }) => theme.color.green};
-      border-radius: ${({ theme }) => theme.border.radius.large};
-
-      font-weight: ${({ theme }) => theme.font.weight.medium};
-      font-size: ${({ theme }) => theme.font.size.medium};
-    }
-  }
-`;
-
-export const MessageSent = styled.span`
-  align-self: center;
-  text-align: center;
-  max-width: 360px;
-  margin: 0 auto;
-  padding: 1.5rem;
-  background: ${({ theme }) => theme.color.greenLight};
-  border-radius: ${({ theme }) => theme.border.radius.normal};
 `;
