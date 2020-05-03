@@ -14,6 +14,7 @@ const color = {
   purpleDark: '#7032C9',
   orange: '#FFAC64',
   orangeDark: '#D28848',
+  red: '#FF0707',
 };
 
 const font = {
@@ -37,6 +38,7 @@ const shadow = {
 const border = {
   radius: {
     normal: '10px',
+    large: '32px',
   },
 };
 

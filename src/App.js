@@ -5,12 +5,15 @@ import Routes from './routes';
 
 import AppProvider from './hooks';
 
+import Header from './components/Header';
+
 import GlobalStyle from './styles/global';
 
 function App() {
   return (
     <BrowserRouter>
       <AppProvider>
+        <Header />
         <Routes />
         <GlobalStyle />
       </AppProvider>
