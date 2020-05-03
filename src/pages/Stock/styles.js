@@ -26,19 +26,20 @@ export const Container = styled(PageContainer)`
     ${Card} {
       display: flex;
       flex-direction: column;
-      flex-grow: 1;
+      flex-basis: 100%;
       padding: 1rem;
-
-      & + div {
-        margin-top: 40px;
-      }
+      margin-bottom: 2rem;
 
       @media ${breakpoints.xl} {
-        flex: 1;
+      flex-basis: 32%;
 
-        & + div {
-          margin-left: 2rem;
-          margin-top: 0;
+      & + div {
+        &:not(:nth-child(3n + 4)) {
+          margin-left: 2%;
+        }
+
+        &:nth-child(3n + 4) {
+          margin-left: 0;
         }
       }
     }
@@ -59,6 +60,7 @@ export const Header = styled.div`
     margin-left: -8px;
     width: 150px;
     height: 150px;
+    border-radius: ${({ theme }) => theme.border.radius.normal};
   }
 
   & > div {

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../../../hooks/auth';
 
 import smileIcon from '../../../assets/smile.svg';
 import phoneIcon from '../../../assets/phone.svg';
@@ -12,19 +13,30 @@ import Button from '../../../components/Button';
 
 import { Container } from './styles';
 
+const userCredentials = {
+  email: 'ceos@email.com',
+  password: 'q1w2e3r4',
+};
+
 export default function SignIn() {
+  const { signIn } = useAuth();
+
+  const handleSigIn = async () => {
+    await signIn(userCredentials);
+  };
+
   return (
     <Container>
       <Card>
         <h1>Login</h1>
 
-        <Button>
-          <Link to="/signup">
-            <img src={olistImg} alt="Login Olist" />
-          </Link>
+        <Button onClick={handleSigIn}>
+          <img src={olistImg} alt="Login Olist" />
         </Button>
         <Button>
-          <img src={mercadoLivreImg} alt="Login Mercado Livre" />
+          <Link to="/signup">
+            <img src={mercadoLivreImg} alt="Login Mercado Livre" />
+          </Link>
         </Button>
 
         <label>

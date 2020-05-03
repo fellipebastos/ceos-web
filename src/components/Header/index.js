@@ -8,7 +8,7 @@ import {
 } from 'react-icons/md';
 import { Form } from '@unform/web';
 
-// import { useAuth } from '../../hooks/auth';
+import { useAuth } from '../../hooks/auth';
 
 import logoCeos from '../../assets/logo-ceos-blue.png';
 import userImg from '../../assets/thumb-profile.png';
@@ -19,7 +19,7 @@ import Input from '../Input';
 import { Container, Menu, MenuLink, Profile } from './styles';
 
 export default function Header() {
-  // const { user } = useAuth();
+  const { user, signOut } = useAuth();
   const { pathname } = useLocation();
   const [activeProfileForm, setActiveProfileForm] = useState(false);
 
@@ -27,7 +27,7 @@ export default function Header() {
     console.log(data);
   };
 
-  // if (!user) return null;
+  if (!user) return null;
 
   return (
     <Container>
@@ -36,12 +36,12 @@ export default function Header() {
       <Profile>
         <Button onClick={() => setActiveProfileForm(!activeProfileForm)}>
           <img src={userImg} alt="João Carvalho" />
-          João Carvalho
+          {`${user.name} ${user.lastname}`}
           <MdArrowDropDown />
         </Button>
 
         {activeProfileForm && (
-          <Form onSubmit={handleSubmit}>
+          <Form initialData={user} onSubmit={handleSubmit}>
             <Input
               id="name"
               name="name"
@@ -50,8 +50,8 @@ export default function Header() {
             />
 
             <Input
-              id="last_name"
-              name="last_name"
+              id="lastname"
+              name="lastname"
               label="Sobrenome"
               placeholder="Digite seu sobrenome"
             />
@@ -72,7 +72,7 @@ export default function Header() {
 
             <Button type="submit">Salvar</Button>
             <hr />
-            <Button>Sair</Button>
+            <Button onClick={() => signOut()}>Sair</Button>
           </Form>
         )}
       </Profile>

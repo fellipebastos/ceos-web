@@ -19,11 +19,11 @@ export const Container = styled(PageContainer)`
       flex-basis: 32%;
 
       & + div {
-        &:not(:nth-child(4n)) {
+        &:not(:nth-child(3n + 4)) {
           margin-left: 2%;
         }
 
-        &:nth-child(4n) {
+        &:nth-child(3n + 4) {
           margin-left: 0;
         }
       }
@@ -45,6 +45,7 @@ export const Header = styled.div`
     margin-left: -8px;
     width: 90px;
     height: 90px;
+    border-radius: ${({ theme }) => theme.border.radius.normal};
   }
 
   & > div:first-of-type {
