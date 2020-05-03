@@ -4,6 +4,7 @@ import Route from './Route';
 
 import Auth from '../pages/Auth';
 import Dashboard from '../pages/Dashboard';
+import Messages from '../pages/Messages';
 
 export default function Routes() {
   return (
@@ -12,7 +13,7 @@ export default function Routes() {
       <Route path="/signup" component={Auth} />
 
       <Route path="/dashboard" component={Dashboard} />
-      <Route path="/messages" component={Dashboard} />
+      <Route path="/messages" component={Messages} />
       <Route path="/stock" component={Dashboard} />
     </Switch>
   );

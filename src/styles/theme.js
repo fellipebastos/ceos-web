@@ -5,6 +5,8 @@ const color = {
   grayLight: '#999999',
   gray: '#666666',
   grayDark: '#333333',
+  greenLight: '#9AE7D7',
+  green: '#02C39A',
   blueVeryLight: '#CBE3F2',
   blueSemiLight: '#98C1D9',
   blueLight: '#60C4FF',
@@ -14,6 +16,7 @@ const color = {
   purpleDark: '#7032C9',
   orange: '#FFAC64',
   orangeDark: '#D28848',
+  orangeTwo: '#FF604A',
   red: '#FF0707',
 };
 
